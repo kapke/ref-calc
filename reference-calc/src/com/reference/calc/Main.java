@@ -8,3 +8,9 @@ public class Main {
         System.out.println("Ala ma kota");
     }
 }
+
+class ExampleAdder {
+    public double add(double l, double r) {
+        return l+r;
+    }
+}
