@@ -1,10 +1,9 @@
 package com.reference.calc;
 
-import com.reference.calc.core.Calc;
-import com.reference.calc.core.operation.Addition;
-import com.reference.calc.core.operation.Division;
-import com.reference.calc.core.operation.Multiplication;
-import com.reference.calc.core.operation.Subtraction;
+import com.reference.calc.operation.Addition;
+import com.reference.calc.operation.Division;
+import com.reference.calc.operation.Multiplication;
+import com.reference.calc.operation.Subtraction;
 
 /**
  * Created by kapke on 24.02.15.

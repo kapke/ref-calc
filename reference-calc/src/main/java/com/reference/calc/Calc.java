@@ -1,6 +1,6 @@
-package com.reference.calc.core;
+package com.reference.calc;
 
-import com.reference.calc.core.operation.Operation;
+import com.reference.calc.operation.Operation;
 
 import java.util.ArrayList;
 import java.util.List;

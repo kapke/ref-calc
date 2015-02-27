@@ -1,17 +1,16 @@
-package com.reference.calc.core.operation;
+package com.reference.calc.operation;
 
 /**
  * Created by kapke on 24.02.15.
  */
-public class Subtraction implements Operation {
-
+public class Multiplication implements Operation {
     @Override
     public String getSymbol() {
-        return "-";
+        return "*";
     }
 
     @Override
     public double calc(double left, double right) {
-        return left-right;
+        return left*right;
     }
 }

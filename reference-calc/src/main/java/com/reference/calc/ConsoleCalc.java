@@ -1,10 +1,7 @@
 package com.reference.calc;
 
-import com.reference.calc.core.Calc;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Date;
 
 /**
  * Created by kapke on 24.02.15.

@@ -1,6 +1,6 @@
-package com.reference.calc.test.core.operation;
+package test.com.reference.calc.core.operation;
 
-import com.reference.calc.core.operation.Operation;
+import com.reference.calc.operation.Operation;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -9,7 +9,7 @@ import org.junit.Test;
  */
 public class Addition {
     private Operation getAddition () {
-        return new com.reference.calc.core.operation.Addition();
+        return new com.reference.calc.operation.Addition();
     }
 
     @Test

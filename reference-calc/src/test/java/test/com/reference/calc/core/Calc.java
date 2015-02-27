@@ -1,4 +1,4 @@
-package com.reference.calc.test.core;
+package test.com.reference.calc.core;
 
 /**
  * Created by kapke on 24.02.15.
