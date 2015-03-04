@@ -14,6 +14,7 @@ public class ConsoleCalc {
             String symbol = inputReader.readLine();
             Double right = Double.parseDouble(inputReader.readLine());
             Double result = calc.calculate(left, symbol, right);
+            System.out.println("Ala ma kota");
             if(result != null) {
                 System.out.println(result);
             } else {
