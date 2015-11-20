@@ -11,7 +11,7 @@ public class Subtraction implements Operation {
     }
 
     @Override
-    public double calc(double left, double right) {
+    public Double calc(double left, double right) {
         return left-right;
     }
 }

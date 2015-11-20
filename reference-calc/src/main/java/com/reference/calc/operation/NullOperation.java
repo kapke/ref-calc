@@ -1,16 +1,17 @@
 package com.reference.calc.operation;
 
 /**
- * Created by kapke on 24.02.15.
+ * Created by kapke on 13.11.15.
  */
-public class Multiplication implements Operation {
+public class NullOperation implements Operation {
+
     @Override
     public String getSymbol() {
-        return "*";
+        return null;
     }
 
     @Override
     public Double calc(double left, double right) {
-        return left*right;
+        return null;
     }
 }

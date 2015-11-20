@@ -5,5 +5,5 @@ package com.reference.calc.operation;
  */
 public interface Operation {
     public String getSymbol();
-    public double calc(double left, double right);
+    public Double calc(double left, double right);
 }
