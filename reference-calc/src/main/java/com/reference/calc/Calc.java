@@ -10,9 +10,6 @@ import java.util.StringJoiner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by kapke on 24.02.15.
- */
 public class Calc {
     private List<Operation> operations;
 
