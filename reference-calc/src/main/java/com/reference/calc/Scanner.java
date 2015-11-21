@@ -1,38 +1,45 @@
 package com.reference.calc;
 
-import com.reference.calc.exception.ParseErrorException;
+import com.reference.calc.exception.TokenizeException;
 import com.reference.calc.token.Token;
 import com.reference.calc.token.TokenInstance;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by kapke on 21.11.15.
  */
-public class Tokenizer {
+public class Scanner {
     public static final List<Token> defaultTokens = Arrays.asList(
         new Token("empty", "\\s+"),
         new Token("opening_brace", "\\("),
         new Token("closing_brace", "\\)"),
         new Token("number", "\\d+(\\.\\d+)?"),
-        new Token("symbol_addition", "\\+"),
-        new Token("symbol_subtraction", "-"),
-        new Token("symbol_multiplication", "\\*"),
-        new Token("symbol_division", "/"));
+        new Token("symbol_plus", "\\+"),
+        new Token("symbol_minus", "-"),
+        new Token("symbol_asterisk", "\\*"),
+        new Token("symbol_slash", "/"));
 
     private List<Token> tokens;
 
-    public Tokenizer () {
+    public Scanner() {
         this(defaultTokens);
     }
 
-    public Tokenizer (List<Token> tokens) {
+    public Scanner(List<Token> tokens) {
         this.tokens = tokens;
     }
 
-    public List<TokenInstance> tokenize (String originalExpression) throws ParseErrorException {
+    public List<TokenInstance> sanitize (List<TokenInstance> tokens) {
+        return tokens.stream()
+                .filter(tokenInstance -> !tokenInstance.getType().equals("empty"))
+                .collect(Collectors.toList());
+    }
+
+    public List<TokenInstance> tokenize (String originalExpression) throws TokenizeException {
         List<TokenInstance> output = new ArrayList<>();
 
         int pos = 1;
@@ -51,7 +58,7 @@ public class Tokenizer {
             } else if (pos < expression.length()) {
                 pos += 1;
             } else {
-                throw new ParseErrorException(originalExpression);
+                throw new TokenizeException(originalExpression);
             }
         }
 

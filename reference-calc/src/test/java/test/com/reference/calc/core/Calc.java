@@ -1,8 +1,8 @@
 package test.com.reference.calc.core;
 
 import com.reference.calc.exception.CalcException;
-import com.reference.calc.operation.Addition;
-import com.reference.calc.operation.Subtraction;
+import com.reference.calc.expression.operation.Addition;
+import com.reference.calc.expression.operation.Subtraction;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,20 +13,6 @@ public class Calc {
     @Before
     public void setUp () {
         this.calc = new com.reference.calc.Calc();
-        this.calc.registerOperation(new Addition());
-        this.calc.registerOperation(new Subtraction());
-    }
-
-    @Test
-    public void itShouldReturnNullIfOperationIsNotRegistered () {
-        Assert.assertEquals(this.calc.calculate(1.0, "a", 2.0), null);
-    }
-
-    @Test
-    public void itShouldUseProperOperationIfPossible () {
-        Double sum = this.calc.calculate(1.0, "+", 1.0);
-
-        Assert.assertEquals(2.0, sum, 0.01);
     }
 
     @Test

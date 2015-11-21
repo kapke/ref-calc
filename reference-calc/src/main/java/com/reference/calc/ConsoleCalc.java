@@ -10,10 +10,7 @@ public class ConsoleCalc {
     public void run (Calc calc) {
         BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
         try {
-            Double left = Double.parseDouble(inputReader.readLine());
-            String symbol = inputReader.readLine();
-            Double right = Double.parseDouble(inputReader.readLine());
-            Double result = calc.calculate(left, symbol, right);
+            Double result = calc.calculate(inputReader.readLine());
             if(result != null) {
                 System.out.println(result);
             } else {
