@@ -1,5 +1,6 @@
 package test.com.reference.calc.core;
 
+import com.reference.calc.exception.CalcException;
 import com.reference.calc.operation.Addition;
 import com.reference.calc.operation.Subtraction;
 import org.junit.Assert;
@@ -29,14 +30,14 @@ public class Calc {
     }
 
     @Test
-    public void itShouldEvaluateExpression () {
+    public void itShouldEvaluateExpression () throws CalcException {
         Double sum = this.calc.calculate("1.0 + 1.0");
 
         Assert.assertEquals(2.0, sum, 0.01);
     }
 
     @Test
-    public void itShouldEvaluateExpressionWithNegativeNumbers () {
+    public void itShouldEvaluateExpressionWithNegativeNumbers () throws CalcException {
         Double sum1 = calc.calculate("-1 + 2");
         Double sum2 = calc.calculate("1 + -2");
         Double sum3 = calc.calculate("1 + (-2)");
@@ -47,14 +48,14 @@ public class Calc {
     }
 
     @Test
-    public void itShouldEvaluateComplexExpressionsWithRightOrderOfExecution () {
+    public void itShouldEvaluateComplexExpressionsWithRightOrderOfExecution () throws CalcException {
         Double result = calc.calculate("2 + 2 * 2");
 
         Assert.assertEquals(6, result, 0);
     }
 
     @Test
-    public void itShouldEvaluateExpressionsWithGroupingInParentheses () {
+    public void itShouldEvaluateExpressionsWithGroupingInParentheses () throws CalcException {
         Double result1 = calc.calculate("(2 + 2) * 2");
         Double result2 = calc.calculate("(2 + 2) * (3 + 4)");
 
@@ -63,14 +64,14 @@ public class Calc {
     }
 
     @Test
-    public void itShouldCalculateExpressionsWithNestedParentheses () {
+    public void itShouldCalculateExpressionsWithNestedParentheses () throws CalcException {
         Double result1 = calc.calculate("(1 + (2 * 3)) * 2");
 
         Assert.assertEquals(14, result1, 0);
     }
 
     @Test
-    public void itShouldEvaluateExpressionWhichIsWholeGroupedInParentheses () {
+    public void itShouldEvaluateExpressionWhichIsWholeGroupedInParentheses () throws CalcException {
         Double result1 = calc.calculate("(1 + 2)");
         Double result2 = calc.calculate("(2 + 2 * 2)");
 
@@ -79,7 +80,7 @@ public class Calc {
     }
 
     @Test
-    public void itShouldBeSpaceInsensitive () {
+    public void itShouldBeSpaceInsensitive () throws CalcException {
         Double[] results = {
             calc.calculate("1+2"),
             calc.calculate("1+ 2"),
